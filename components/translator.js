@@ -22,25 +22,9 @@ class Translator {
     translateToAmerican(text) {
         let translation = text;
         translation = this.getTranslatedText(translation, americanOnly, false);
-        // Object.entries(americanOnly).forEach((entry) => {
-        //     let re = new RegExp(String.raw`\b${entry[1]}\b`, "g", "i");
-        //     if (re.test(text)) translation = translation.replaceAll(entry[1], '<span class="highlight">'+americanOnly[entry[0]]+'</span>')
-        // })
         translation = this.getTranslatedText(translation, americanToBritishSpelling, false);
-        // Object.entries(americanToBritishSpelling).forEach((entry) => {
-        //     let re = new RegExp(String.raw`\b${entry[1]}\b`, "g", "i");
-        //     if (re.test(text)) translation = translation.replaceAll(entry[1], '<span class="highlight">'+americanToBritishSpelling[entry[0]]+'</span>')
-        // })
         translation = this.getTranslatedText(translation, americanToBritishTitles, false);
-        // Object.entries(americanToBritishTitles).forEach((entry) => {
-        //     let re = new RegExp(String.raw`\b${entry[1]}\b`, "g", "i");
-        //     if (re.test(text)) translation = translation.replaceAll(entry[1], '<span class="highlight">'+americanToBritishTitles[entry[0]]+'</span>')
-        // })
         translation = this.getTranslatedText(translation, britishOnly, true);
-        // Object.entries(britishOnly).forEach((entry) => {
-        //     let re = new RegExp(String.raw`\b${entry[0]}\b`, "g", "i");
-        //     if (re.test(text)) translation = translation.replaceAll(entry[0], '<span class="highlight">'+entry[1]+'</span>')
-        // })
         translation = translation.replaceAll(/\b(\d\d?).(\d\d)/g, '<span class="highlight">'+'$1:$2'+'</span>');
         return translation;
     }
@@ -63,7 +47,6 @@ class Translator {
             if (searchElement.includes('.')) {
                 searchElement = searchElement.replaceAll('.', '[.]');
                 searchElement = '\\b'+searchElement
-                // console.log('sEl',searchElement)
             } else {
                 searchElement = '\\b'+searchElement+'\\b';
             }
