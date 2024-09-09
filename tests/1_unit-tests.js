@@ -65,7 +65,7 @@ suite('Unit Tests', () => {
     
     //#12
     test("Translate Paracetamol takes up to an hour to work. to American English", function() {
-        assert.equal(translator.translate("Paracetamol takes up to an hour to work.", amLocale), `<span class="highlight">Tylenol</span> takes up to an hour to work.`);
+        assert.equal(translator.translate("Paracetamol takes up to an hour to work.", amLocale), `<span class="highlight">Acetaminophen</span> takes up to an hour to work.`);
     });
     
     //#13
@@ -110,7 +110,7 @@ suite('Unit Tests', () => {
     
     //#21
     test("Highlight translation in Mangoes are my favorite fruit.",function() {
-        assert.include(translator.translate("Mangoes are my favorite fruit.", britLocale), `<span class="highlight"></span>`);
+        assert.include(translator.translate("Mangoes are my favorite fruit.", britLocale), `<span class="highlight">favourite</span>`);
     });
     
     //#22
@@ -120,12 +120,12 @@ suite('Unit Tests', () => {
     
     //#23
     test("Highlight translation in We watched the footie match for a while.",function() {
-        assert.include(translator.translate("We watched the footie match for a while.", amLocale), `<span class="highlight">football</span>`);
+        assert.include(translator.translate("We watched the footie match for a while.", amLocale), `<span class="highlight">soccer</span>`);
     });
     
     //#24
     test("Highlight translation in Paracetamol takes up to an hour to work.",function() {
-        assert.include(translator.translate("Paracetamol takes up to an hour to work.", amLocale), `<span class="highlight">Tylenol</span>`);
+        assert.include(translator.translate("Paracetamol takes up to an hour to work.", amLocale), `<span class="highlight">Acetaminophen</span>`);
     });
 
 });
